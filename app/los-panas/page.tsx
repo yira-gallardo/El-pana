@@ -28,17 +28,29 @@ export default function Home() {
       <div className="bg-yellow-400 py-28 text-center text-black">
         <p className="text-6xl">LOS PANAS DE EL PANA</p>
       </div>
-      <section className="bg-black py-8 grid-cols-4">
-        <div
-          className="container mx-auto
-            max-w-6xl
-        "
-        >
-          <div className="flex justify-center">
-            <img className="w-1/4 mx-2" src="/img/logo-2.jpeg" alt="Imagen 1" />
-            <img className="w-1/4 mx-2" src="/img/logo-3.jpeg" alt="Imagen 2" />
-            <img className="w-1/4 mx-2" src="/img/logo-4.jpeg" alt="Imagen 3" />
-            <img className="w-1/4 mx-2" src="/img/logo-5.jpeg" alt="Imagen 4" />
+      <section className="bg-black py-8">
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+            <img
+              className="w-full mx-auto"
+              src="/img/logo-2.jpeg"
+              alt="Imagen 1"
+            />
+            <img
+              className="w-full mx-auto"
+              src="/img/logo-3.jpeg"
+              alt="Imagen 2"
+            />
+            <img
+              className="w-full mx-auto"
+              src="/img/logo-4.jpeg"
+              alt="Imagen 3"
+            />
+            <img
+              className="w-full mx-auto"
+              src="/img/logo-5.jpeg"
+              alt="Imagen 4"
+            />
           </div>
         </div>
       </section>

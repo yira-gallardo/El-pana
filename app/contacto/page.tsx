@@ -16,27 +16,24 @@ export default function Contacto() {
             <span className="text-yellow-400 tracking-widest">CONTACTO</span>
           </h2>
           <div className="my-20">
-            <form className="flex flex-col space-y-4">
-              <div className="flex flex-col md:flex-row md:space-x-4">
-                <input
-                  type="text"
-                  placeholder="Nombre"
-                  className="w-full p-4 font-bold border-2 border-white bg-black"
-                />
-                <input
-                  type="text"
-                  placeholder="Email"
-                  className="w-full p-4 font-bold border-2 border-white bg-black"
-                />
-              </div>
+            <form className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4">
+              <input
+                type="text"
+                placeholder="Nombre"
+                className="w-full md:w-auto p-4 font-bold border-2 border-white bg-black text-white"
+              />
+              <input
+                type="text"
+                placeholder="Email"
+                className="w-full md:w-auto p-4 font-bold border-2 border-white bg-black text-white"
+              />
               <textarea
-                className="w-full p-4 mb-4 font-bold border-2 border-white h-80 bg-black"
+                className="w-full p-4 mb-4 font-bold border-2 border-white h-80 bg-black text-white"
                 placeholder="Tu mensaje"
               />
               <button
                 className="w-full p-2 text-white font-black border-2 bg-black border-white
-                hover:bg-white hover:text-black transition duration-300 ease-in-out
-              "
+                 hover:bg-white hover:text-black transition duration-300 ease-in-out"
               >
                 Enviar
               </button>
