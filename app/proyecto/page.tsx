@@ -160,7 +160,7 @@ export default function Home() {
           <h2 className="text-yellow-400 text-lg font-semibold">TOZTECAS</h2>
           <p className="text-gray-700 text-lg mt-4">
             Director: Rodrigo Pérez Galicia Música Original y Diseño de audio:
-            Rafael "EL PANA" Pérez
+            Rafael &quot;EL PANA&quot; Pérez
           </p>
         </div>
       </div>

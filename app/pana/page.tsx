@@ -15,14 +15,14 @@ export default function Pana() {
           <div className="text-left py-12">
             <h2 className="text-4xl  text-yellow-500 ">PANA.</h2>
             <p className="text-lg leading-relaxed">
-              ['Pa. na]<br></br>
+              [&apos;Pa. na]<br></br>
               Sustantivo femenino y masculino <br></br>
-              Anglicismo bastardizado de la palabra inglesa "partner"
-              (compañero)Ej:"Voy a tomarme unos tragos con los panas…” Sinónimos
-              : Amigo, Amigo íntimo, Compañero, Compinche, Camarada, Brother,
-              Parcero. En Venezuela se está canalizando de forma oficial la
-              sustitución de la palabra PANAMERICANO por algún otro vocablo,
-              pues los Americanos (estadonidenses) ya no son panas.
+              Anglicismo bastardizado de la palabra inglesa &quot;partner&quot;
+              (compañero)Ej:&quot;Voy a tomarme unos tragos con los panas…”
+              Sinónimos : Amigo, Amigo íntimo, Compañero, Compinche, Camarada,
+              Brother, Parcero. En Venezuela se está canalizando de forma
+              oficial la sustitución de la palabra PANAMERICANO por algún otro
+              vocablo, pues los Americanos (estadonidenses) ya no son panas.
             </p>
             <br></br>
             <h2 className="text-2xl pb-3.5">
@@ -59,7 +59,7 @@ export default function Pana() {
             Rafael Ángel Pérez Valcárcel es un Pana al que le gusta hacer música
             y que decidió dedicarse a hacer lo que le gusta en vez de trabajar
             en una oficina persiguiendo aumentos y promociones. A veces
-            produce​j​ingles, a veces produce música para series y películas, a
+            produce​ingles, a veces produce música para series y películas, a
             veces produce música de otros artistas, a veces toca con bandas.
           </p>
           <p className="text-lg leading-relaxed pt-12">
