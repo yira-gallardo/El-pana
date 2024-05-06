@@ -1,13 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import Slider from "react-slick";
-import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Link from "next/link";
-import Project from "@/components/Project/Project";
-import Footer from "@/components/Footer/Footer";
 import Head from "next/head";
 
 export default function Home() {
