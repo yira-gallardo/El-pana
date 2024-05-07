@@ -1,69 +1,38 @@
-"use client";
-import React from "react";
-import Slider from "react-slick";
-import { motion } from "framer-motion";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Link from "next/link";
 import Project from "@/components/Project/Project";
 import Footer from "@/components/Footer/Footer";
 import Nav from "@/components/Nav/Nav";
+import { createClient } from "contentful";
+import HomeHeader from "@/components/HomeHeader/HomeHeader";
+export const dynamic = "force-dynamic";
 
-export default function Home() {
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
+async function getData() {
+  const client = createClient({
+    space: process.env.CONTENTFUL_SPACE_ID,
+    accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  } as any);
+
+  const entries = await client.getEntries({
+    content_type: "project",
+  });
+
+  console.log(entries.items);
+
+  return {
+    props: {
+      projects: entries.items,
+    },
   };
+}
+
+export default async function Home() {
+  const data = await getData();
+  const { projects } = data.props;
+  const headerProjects = projects.slice(0, 6);
 
   return (
     <main>
       <Nav />
-      {/* HEADER */}
-      <section className="relative z-0">
-        <Slider {...settings}>
-          <div>
-            <div className="min-h-screen w-full relative">
-              <div
-                className="min-h-screen bg-cover bg-center w-full relative z-0 "
-                style={{ backgroundImage: "url('/img/img-3.jpg')" }}
-              ></div>
-              <div className="absolute bottom-0 left-0 w-full h-full z-0 max-w-[800px] h-[300px] flex flex-col justify-center items-start p-10">
-                <h2 className="font-bold text-4xl">PROYECTO TITLE</h2>
-                <h3>Proyecto subtitle lorem ipsum dolor sit amet</h3>
-                <Link
-                  href="/"
-                  className="hover:bg-white text-white font-bold py-2 px-4 rounded-full border-4 mt-4 inline-block"
-                >
-                  VER MÁS
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="min-h-screen w-full relative">
-              <div
-                className="min-h-screen bg-cover bg-center w-full relative z-0 "
-                style={{ backgroundImage: "url('/img/img-3.jpg')" }}
-              ></div>
-              <div className="absolute bottom-0 left-0 w-full h-full z-0 max-w-[800px] h-[300px] flex flex-col justify-center items-start p-10">
-                <h2 className="font-bold text-4xl">PROYECTO TITLE</h2>
-                <h3>Proyecto subtitle lorem ipsum dolor sit amet</h3>
-                <Link
-                  href="/"
-                  className="hover:bg-white text-white font-bold py-2 px-4 rounded-full border-4 mt-4 inline-block"
-                >
-                  VER MÁS
-                </Link>
-              </div>
-            </div>
-          </div>
-        </Slider>
-      </section>
+      <HomeHeader projects={headerProjects} />
       <div className="bg-yellow-400 py-10 text-center text-black">
         <p className="text-lg ">
           Producción Musical • Composición • Arreglos • Covers • Jingles • Score
@@ -75,19 +44,14 @@ export default function Home() {
           <span className="text-yellow-500 ">ÚLTIMOS PROYECTOS</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
+          {projects.map((project: any, idx: number) => (
+            <Project
+              key={idx}
+              title={project.fields.title}
+              subtitle={project.fields.subtitle}
+              image={project.fields.image.fields?.file.url}
+            />
+          ))}
         </div>
       </section>
       <section className="bg-black">
