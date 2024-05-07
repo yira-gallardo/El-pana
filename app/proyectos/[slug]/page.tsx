@@ -52,8 +52,9 @@ function ContentfulRenderer({ content }: any) {
 export default async function Home({ params }: { params: { slug: string } }) {
   const data = await getPostBySlug(params.slug);
 
-  // ts-ignore
-  const content: any = data.props.post.fields.content.content;
+  const content = (data.props.post as any).fields.content?.content || [];
+  const video =
+    (data.props.post as any).fields.video.content[0].content[0].value || [];
 
   return (
     <main>
@@ -63,7 +64,7 @@ export default async function Home({ params }: { params: { slug: string } }) {
           {/* ts-ignore */}
           <div
             dangerouslySetInnerHTML={{
-              __html: data.props.post.fields.video.content[0].content[0].value,
+              __html: video,
             }}
           ></div>
           <h1 className="text-yellow-400 text-4xl font-bold mt-8">
