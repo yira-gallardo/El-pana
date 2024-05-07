@@ -32,21 +32,7 @@ export default function Home() {
         <h2 className="text-2xl text-center mb-4 py-12">
           <span className="text-yellow-500 ">PROYECTOS</span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-          <Project />
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"></div>
       </section>
       <section className="bg-black">
         <div className="container mx-auto py-8">
