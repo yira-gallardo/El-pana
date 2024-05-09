@@ -43,6 +43,7 @@ export default async function Category({
               title={project.fields.title}
               subtitle={project.fields.subtitle}
               image={project.fields.image.fields?.file.url}
+              slug={project.fields.slug}
             />
           ))}
         </div>
