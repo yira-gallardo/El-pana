@@ -49,9 +49,12 @@ function ContentfulRenderer({ content }: any) {
   return <div>{content.map((node: any, index: any) => renderNode(node))}</div>;
 }
 
-export default async function Home({ params }: { params: { slug: string } }) {
+export default async function Proyecto({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const data = await getPostBySlug(params.slug);
-
   const content = (data.props.post as any).fields.content?.content || [];
   const video =
     (data.props.post as any).fields.video.content[0].content[0].value || [];
@@ -60,8 +63,6 @@ export default async function Home({ params }: { params: { slug: string } }) {
     <main>
       <div className="bg-white h-screen flex flex-col justify-center items-center">
         <div className="max-w-4xl w-full mx-auto">
-          {/* dangerously html based on data.props.post.video */}
-          {/* ts-ignore */}
           <div
             dangerouslySetInnerHTML={{
               __html: video,

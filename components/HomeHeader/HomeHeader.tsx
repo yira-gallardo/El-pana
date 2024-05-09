@@ -10,15 +10,16 @@ export default function HomeHeader({ projects }: { projects: any[] }) {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
+    pauseOnHover: false,
   };
 
   return (
-    <section className="relative z-0">
+    <section className="relative z-0 text-[0px]">
       <Slider {...settings}>
         {projects.map((project: any, idx: number) => (
           <div key={idx}>
@@ -31,10 +32,10 @@ export default function HomeHeader({ projects }: { projects: any[] }) {
               ></div>
               <div className="absolute bottom-0 left-0 w-full h-full z-0 max-w-[800px] h-[300px] flex flex-col justify-center items-start p-10">
                 <h2 className="font-bold text-4xl">{project.fields.title}</h2>
-                <h3>{project.fields.subtitle}</h3>
+                <h3 className="text-2xl">{project.fields.subtitle}</h3>
                 <Link
                   href={`/proyectos/${project.fields.slug}`}
-                  className="hover:bg-white text-white font-bold py-2 px-4 rounded-full border-4 mt-4 inline-block"
+                  className="hover:bg-white text-white font-bold py-2 px-4 rounded-full border-4 mt-4 inline-block text-lg hover:text-black"
                 >
                   VER MÁS
                 </Link>

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,15 +11,20 @@ export default function Nav() {
       {/* MENU DESKTOP */}
       <nav
         className="fixed top-0 left-0 w-full py-4 px-8 bg-opacity-75 text-white z-50  items-center justify-between
-        opacity-90 bg-black border-b-2 border-white hidden md:flex
+        opacity-90 bg-black border-b-2 border-white hidden lg:flex
       "
       >
         <div className="flex items-center">
           <Link href="/">
-            <img src="/img/logo.png" alt="Logo" className="h-8 mr-4" />
+            <Image
+              src="/img/logo.png"
+              width={100}
+              height={32}
+              alt="Logo"
+              className="h-8 mr-4"
+            />
           </Link>
         </div>
-
         <ul className="hidden md:flex md:items-center md:space-x-6 text-sm">
           <li>
             <Link
@@ -30,7 +36,7 @@ export default function Nav() {
           </li>
           <li>
             <Link
-              href="/publicidad"
+              href="/categoria/publicidad"
               className="hover:text-yellow-500 transition duration-300 ease-in-out"
             >
               PUBLICIDAD
@@ -38,7 +44,7 @@ export default function Nav() {
           </li>
           <li>
             <Link
-              href="/diseno-de-audio"
+              href="/categoria/diseno-de-audio"
               className="hover:text-yellow-500 transition duration-300 ease-in-out"
             >
               DISEÑO DE AUDIO
@@ -46,7 +52,7 @@ export default function Nav() {
           </li>
           <li>
             <Link
-              href="/cine"
+              href="/categoria/cine-y-tv"
               className="hover:text-yellow-500 transition duration-300 ease-in-out"
             >
               CINE Y TV
@@ -124,7 +130,7 @@ export default function Nav() {
               viewBox="0 0 16 16"
             >
               <path
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
               />
             </svg>
@@ -196,7 +202,7 @@ export default function Nav() {
       </nav>
       {/* MENU MOBILE */}
       <nav
-        className="fixed top-0 left-0 w-full py-4 px-8 bg-opacity-75 text-white z-50 block md:hidden items-center justify-between
+        className="fixed top-0 left-0 w-full py-4 px-8 bg-opacity-75 text-white z-50 block lg:hidden items-center justify-between
         opacity-90 bg-black border-b-2 border-white
       "
       >
@@ -219,7 +225,7 @@ export default function Nav() {
                 viewBox="0 0 16 16"
               >
                 <path
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
                 />
               </svg>

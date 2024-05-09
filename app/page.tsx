@@ -1,6 +1,4 @@
 import Project from "@/components/Project/Project";
-import Footer from "@/components/Footer/Footer";
-import Nav from "@/components/Nav/Nav";
 import { createClient } from "contentful";
 import HomeHeader from "@/components/HomeHeader/HomeHeader";
 export const dynamic = "force-dynamic";
@@ -15,8 +13,6 @@ async function getData() {
     content_type: "project",
   });
 
-  console.log(entries.items);
-
   return {
     props: {
       projects: entries.items,
@@ -30,15 +26,14 @@ export default async function Home() {
   const headerProjects = projects.slice(0, 6);
 
   return (
-    <main>
-      <Nav />
+    <main className="overflow-hidden">
       <HomeHeader projects={headerProjects} />
-      <div className="bg-yellow-400 py-10 text-center text-black">
+      <section className="bg-yellow-400 py-10 text-center text-black p-8">
         <p className="text-lg ">
           Producción Musical • Composición • Arreglos • Covers • Jingles • Score
           • Sound Design
         </p>
-      </div>
+      </section>
       <section className="bg-black py-8">
         <h2 className="text-3xl text-center font-bold mb-4 py-12">
           <span className="text-yellow-500 ">ÚLTIMOS PROYECTOS</span>
@@ -54,7 +49,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <section className="bg-black">
+      <section className="bg-black p-8">
         <div className="container mx-auto py-8">
           <h2 className="text-4xl text-center  mb-4 text-white">
             <span className="text-white tracking-widest">CONTACTO</span>
@@ -88,7 +83,6 @@ export default async function Home() {
           </div>
         </div>
       </section>
-      <Footer />
     </main>
   );
 }
