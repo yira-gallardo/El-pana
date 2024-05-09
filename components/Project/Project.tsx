@@ -4,13 +4,15 @@ export default function Project({
   title,
   subtitle,
   image,
+  slug,
 }: {
   title: string;
   subtitle: string;
   image: string;
+  slug: string;
 }) {
   return (
-    <Link href="/" className="relative h-[300px]">
+    <Link href={`/proyectos/${slug}`} className="relative h-[300px]">
       <div
         className="absolute w-full h-full bg-cover bg-center w-full relative z-0"
         style={{

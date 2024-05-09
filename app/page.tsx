@@ -1,6 +1,7 @@
 import Project from "@/components/Project/Project";
 import { createClient } from "contentful";
 import HomeHeader from "@/components/HomeHeader/HomeHeader";
+import Link from "next/link";
 export const dynamic = "force-dynamic";
 
 async function getData() {
@@ -45,10 +46,12 @@ export default async function Home() {
               title={project.fields.title}
               subtitle={project.fields.subtitle}
               image={project.fields.image.fields?.file.url}
+              slug={project.fields.slug}
             />
           ))}
         </div>
       </section>
+
       <section className="bg-black p-8">
         <div className="container mx-auto py-8">
           <h2 className="text-4xl text-center  mb-4 text-white">
